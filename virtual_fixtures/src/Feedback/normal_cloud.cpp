@@ -1,8 +1,15 @@
+
 /*
- * normal_cloud.cpp
+ * Author(s): 
+ * ME5205 - Professor Fischer
+ * Created December 17, 2014
  *
- *  Created on: Dec 17, 2014
- *      Author: Vanderlei Cunha Jr.
+ * @node: 
+ * @Publisher: 
+ * @Subscriber:
+ * @msg: sensor_msgs::PointCloud2
+ *
+ * @purpose: 
  *
  *
  */
@@ -32,7 +39,7 @@ loopRate.sleep();
 
 }
 
-return 0;
-//return EXIT_SUCCESS;
+
+return EXIT_SUCCESS;
 }
 

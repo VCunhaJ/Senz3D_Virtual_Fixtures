@@ -7,7 +7,7 @@
  *
  */
 #include<Fixtures/virtual_fixtures.h>
-#include<Fixtures/reconstruction_triangulation.h>
+#include<Fixtures/Segmentations/reconstruction_triangulation.h>
 using namespace std;
 using namespace pcl;
 using namespace ros;
@@ -35,7 +35,7 @@ void reconstructionTriangulation(const sensor_msgs::PointCloud2 &segCloud){
   regionGrowing.extract (clusters);
 
   PointCloud <PointXYZRGB>::Ptr colored_cloud = regionGrowing.getColoredCloud ();
-  pcl::visualization::CloudViewer viewer ("Cluster Viewer");
+  visualization::CloudViewer viewer ("Cluster Viewer");
   viewer.showCloud (colored_cloud);
 
 	pcl::toROSMsg(*colored_cloud, pc_data);

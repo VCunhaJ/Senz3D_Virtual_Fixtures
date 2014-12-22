@@ -20,14 +20,77 @@ in ROS and performs Virtual Fixtures Operations for the da Vinci Virtual Environ
 
 #### Published Topics
 
-
-**Object_Segmentation** *(sensor_msgs::PointCloud2)*
- Subscribes to 
- Publishes Segmented Objects from the greatest plane (tables or walls)
+**Feedback/Softkinetic_Bringup** *(sensor_msgs::PointCloud2)*
+ @node: softkinetic_bringup_node
+ @Publisher: 
+ @Subscriber:NONE
+ @msg: sensor_msgs::PointCloud2
+ @purpose: 
 
 **Filters/PassThrough** *(sensor_msgs::PointCloud2)*
-  Subscribes to 
-  Publishes 
+ @node: passthrough_filter_node
+ @Publisher: daVinci/Fixture/PassthroughFilter
+ @Subscriber: /softkinetic_camera/depth/points
+ @msg: sensor_msgs::PointCloud2
+ @purpose: iterates through cloud once, filters out non-finite points and points outside intervals (0,1.5) on the "z" field
+
+**Filters/RadiusConditional** *(sensor_msgs::PointCloud2)*
+ @node: 
+ @Publisher: 
+ @Subscriber:
+ @msg: sensor_msgs::PointCloud2
+ @purpose:
+
+**Segmentation/OutlierDisplay** *(sensor_msgs::PointCloud2)*
+ @node: outlier_display_node
+ @Publisher: /daVinci/Fixture/OutliersDisplay
+ @Subscriber: /daVinci/Fixture/PassthroughFilter
+ @msg: sensor_msgs::PointCloud2
+ @purpose: finds the biggest plane (wall or table) using RANSAC (SAC_RANSAC) plane model fitting and removes biggest plane and displays the remaining points
+     
+
+**Segmentation/Object_Segmentation** *(sensor_msgs::PointCloud2)*
+ @node: 
+ @Publisher: 
+ @Subscriber:
+ @msg: sensor_msgs::PointCloud2
+ @purpose:
+
+**Images/Fixed_Base_Tool** *(sensor_msgs::PointCloud2)*
+ @node: 
+ @Publisher: 
+ @Subscriber:
+ @msg: sensor_msgs::PointCloud2
+ @purpose:
+
+**Images/Normal_Components** *(sensor_msgs::PointCloud2)*
+ @node: 
+ @Publisher: 
+ @Subscriber:
+ @msg: sensor_msgs::PointCloud2
+ @purpose:
+
+**Registration/Preoperative** *(sensor_msgs::PointCloud2)*
+ @node: 
+ @Publisher: 
+ @Subscriber:
+ @msg: sensor_msgs::PointCloud2
+ @purpose:
+**Registration/Intraoperative** *(sensor_msgs::PointCloud2)*
+ @node: 
+ @Publisher: 
+ @Subscriber:
+ @msg: sensor_msgs::PointCloud2
+ @purpose:
+**Registration/Cloud_to_Cloud_Registration** *(sensor_msgs::PointCloud2)*
+ @node: 
+ @Publisher: 
+ @Subscriber:
+ @msg: sensor_msgs::PointCloud2
+ @purpose:
+
+**Data Analysis/** 
+
 
 #### Launch Files
 **virtual_fixtures_display.launch** *(visualization::RViz)*
@@ -41,7 +104,7 @@ in ROS and performs Virtual Fixtures Operations for the da Vinci Virtual Environ
 			6 reconstruction_triangulation_node
 			7 pre_operative_image_node
 			8 concave_hull_node
-			9 extract_borders_node
+
  
  
 

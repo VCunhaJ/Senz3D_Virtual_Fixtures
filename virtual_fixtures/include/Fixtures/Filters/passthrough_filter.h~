@@ -3,17 +3,21 @@
 
 #include <Fixtures/virtual_fixtures.h>
 
+using namespace std;
+using namespace pcl;
+using namespace ros;
 
 /*Publisher and Subscriber*/
-ros::Subscriber subscribe_raw_data;
-ros::Publisher publish_filter;
+Subscriber subscribe_raw_data;
+Publisher publish_filter;
+
+/*Class Objects*/
+PointCloud<PointXYZRGB>::Ptr notFilteredCloudPtr(new PointCloud<PointXYZRGB>);
+PointCloud<PointXYZRGB>::Ptr passFilteredCloudPtr(new PointCloud<PointXYZRGB>);
+PassThrough<PointXYZRGB> filterCloud;
 
 
-pcl::PointCloud<pcl::PointXYZRGB>::Ptr filter_cloud_object(new pcl::PointCloud<pcl::PointXYZRGB>);
-
-pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZRGB>);
-
-sensor_msgs::PointCloud2 filteredCloud;
+sensor_msgs::PointCloud2 filteredCloudMsg;
 
 #define LOWER_LIMIT 0
 #define UPPER_LIMIT 2

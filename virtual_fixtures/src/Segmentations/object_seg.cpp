@@ -1,14 +1,17 @@
-/**
-		ME5205: daVinci Group
-		Advisor(s): Gregory Fischer
-		object_seg.cpp
-		Purpose: 
-	
-  @author Vanderlei Cunha Jr.
-		@version 1.0 12/10/14
-		@pkg
-
-*/
+/*
+ * Author(s): Vanderlei Cunha Jr.
+ * ME5205 - Professor Fischer
+ * Created December 13, 2014
+ *
+ * @node: object_seg_node
+ * @Publisher: /daVinci/Segmentation/ObjectSegmentation
+ * @Subscriber: /daVinci/Fixture/OutliersDisplay
+ * @msg: sensor_msgs::PointCloud2
+ *
+ * @purpose: uses Euclidean Cluster extraction algorithm to define how many objects are on the plane
+ *
+ *
+ */
 #include <Fixtures/virtual_fixtures.h>
 #include <Fixtures/Segmentations/object_seg.h>
 
@@ -63,7 +66,7 @@ ros::init(argc, argv, "object_seg_node");
 ros::NodeHandle node;
 
 subscribe_raw_data = node.subscribe("/daVinci/Fixture/OutliersDisplay", 1, &segmentationCallBack);
-publish_object = node.advertise<sensor_msgs::PointCloud2>("daVinci/Fixture/ObjectSegmentation",1);
+publish_object = node.advertise<sensor_msgs::PointCloud2>("/daVinci/Segmentation/ObjectSegmentation",1);
 
 ros::Rate loopRate(10);
 while(ros::ok())

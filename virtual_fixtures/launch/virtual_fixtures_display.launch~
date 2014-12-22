@@ -26,13 +26,8 @@ Additional nodes represent t
   <node name="fixed_base_tool_node" pkg="virtual_fixtures" type="fixed_base_tool_node" args="0" output="screen" />
   <node name="object_seg_node" pkg="virtual_fixtures" type="object_seg_node" args="0" output="screen" />
   <node name="outlier_display_node" pkg="virtual_fixtures" type="outlier_display_node" args="0" output="screen" />
-  <node name="reconstruction_triangulation_node" pkg="virtual_fixtures" type="reconstruction_triangulation_node" args="0" output="screen" />
   <node name="concave_hull_node" pkg="virtual_fixtures" type="concave_hull_node" args="0" output="screen" />
-  <node name="extract_borders_node" pkg="virtual_fixtures" type="extract_borders_node" args="0" output="screen" />
-  <node name="cloud_to_cloud_registration_node" pkg="virtual_fixtures" type="cloud_to_cloud_registration_node" args="0" output="screen" />
-  <node name="intra_operative_image_node" pkg="virtual_fixtures" type="intra_operative_image_node" args="0" output="screen" />
-  <node name="pre_operative_image_node" pkg="virtual_fixtures" type="pre_operative_image_node" args="0" output="screen" />
-  <node name="normal_components_node" pkg="virtual_fixtures" type="normal_components_node" args="0" output="screen" />
+
   
   
   <node pkg="rviz" type="rviz" name="softkinect_rviz" respawn="false"  required="true"

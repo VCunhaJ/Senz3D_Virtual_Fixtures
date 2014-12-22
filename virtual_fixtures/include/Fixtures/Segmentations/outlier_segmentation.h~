@@ -35,6 +35,6 @@ PointIndices::Ptr inlierIndices(new PointIndices); //point indices object
 sensor_msgs::PointCloud2 pc_data;
 
 /*Segmentation distance between each segmentation threshold and max iteration*/
-double max_thresh = 0.023; //mm
+double max_thresh = 0.025; //mm
 double max_iteration = 50;
 #endif /* OUTLIER_SEGMENTATION_H_ */

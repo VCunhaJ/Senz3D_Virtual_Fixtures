@@ -48,11 +48,11 @@ add_definitions(${PCL_DEFINITIONS})
 
 
 #Feedbacks Executable
-#add_executable(extract_borders_node src/Feedback/extract_borders.cpp)
 add_executable(softkinetic_bringup_node src/Feedback/softkinetic_start.cpp)
 
 #Filters Executable
 add_executable(passthrough_filter_node src/Filters/passthrough_filter.cpp)
+add_executable(radius_conditional_filter_node src/Filters/radius_conditional_filter.cpp)
 
 #Fixtures Executable
 add_executable(concave_hull_node src/Fixtures/concave_hull.cpp)
@@ -63,17 +63,15 @@ add_executable(fixed_base_tool_node src/Images/fixed_base_tool.cpp)
 add_executable(normal_components_node src/Images/normal_components.cpp)
 
 
-
-
 #Registrations Executable
 add_executable(pre_operative_image_node src/Registrations/pre_operative_image.cpp)
 add_executable(intraoperative_image_node src/Registrations/intraoperative_image.cpp)
 add_executable(cloud_to_cloud_registration_node src/Registrations/cloud_to_cloud_registration.cpp)
 
 #Segmentations Executable
-add_executable(object_seg_node src/Segmentations/object_seg.cpp)
 add_executable(outlier_display_node src/Segmentations/outlier_segmentation.cpp)
-add_executable(reconstruction_triangulation_node src/Segmentations/reconstruction_triangulation.cpp)
+add_executable(object_seg_node src/Segmentations/object_seg.cpp)
+
 
 #SLAM Executable
 
@@ -86,23 +84,26 @@ target_link_libraries(softkinetic_bringup_node ${DepthSenseSDK_LIBRARIES} ${catk
 
 #Filters Target
 target_link_libraries(passthrough_filter_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
+target_link_libraries(radius_conditional_filter_node${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
 
 #Fixtures Target
 target_link_libraries(concave_hull_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
 
 #Images Target
-target_link_libraries(pre_operative_image_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
-target_link_libraries(intraoperative_image_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
+target_link_libraries(normal_components_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
 target_link_libraries(fixed_base_tool_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
 
 
 #Registrations Target
+target_link_libraries(pre_operative_image_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
+target_link_libraries(intraoperative_image_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
 target_link_libraries(cloud_to_cloud_registration_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
 
 #Segmentations Target
-target_link_libraries(object_seg_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
 target_link_libraries(outlier_display_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
-target_link_libraries(reconstruction_triangulation_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
+target_link_libraries(object_seg_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
+
+
 
 #SLAM Target
 
