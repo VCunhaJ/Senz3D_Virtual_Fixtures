@@ -8,7 +8,7 @@
  *
  */
 #include<Fixtures/virtual_fixtures.h>
-#include<Fixtures/Images/pre_operative_image.h>
+#include<Fixtures/Registrations/pre_operative_image.h>
 
 using namespace std;
 using namespace ros;

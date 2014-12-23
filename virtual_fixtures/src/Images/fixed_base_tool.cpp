@@ -90,7 +90,7 @@ int main (int argc, char** argv)
 ros::init(argc, argv, "fixed_base_tool_node");
 ros::NodeHandle node;
 
-publish_baseTipLocation = node.advertise<sensor_msgs::PointCloud2>("daVinci/Fixture/Constants/BaseTipLocation",1);
+publish_baseTipLocation = node.advertise<sensor_msgs::PointCloud2>("/daVinci/Fixture/Constants/BaseTipLocation",1);
 
 
 

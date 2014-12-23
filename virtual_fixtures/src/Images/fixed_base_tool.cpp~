@@ -8,8 +8,8 @@
  *  to represent represent the pose of the base of the PSM and the tool tip
  */
 #include<Fixtures/virtual_fixtures.h>
-#include <Fixtures/fixed_base_tool.h>
-#include <Fixtures/object_seg.h>
+#include <Fixtures/Images/fixed_base_tool.h>
+#include <Fixtures/Segmentations/object_seg.h>
 
 
 using namespace std;

@@ -2,7 +2,12 @@
  * intraoperative_image.cpp
  *
  *  Created on: Dec 16, 2014
- *      Author: Vanderlei Cunha Jr.
+ *      Author(s): Vanderlei Cunha Jr.
+ *                 Christian Kaan
+ *                 Jiaqi Ren
+ *
+ *      Uses a RGBD camera to obtain an intraoperative image of the object
+ *
  */
 
 

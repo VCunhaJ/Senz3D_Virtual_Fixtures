@@ -67,6 +67,7 @@ add_executable(normal_components_node src/Images/normal_components.cpp)
 add_executable(pre_operative_image_node src/Registrations/pre_operative_image.cpp)
 add_executable(intraoperative_image_node src/Registrations/intraoperative_image.cpp)
 add_executable(cloud_to_cloud_registration_node src/Registrations/cloud_to_cloud_registration.cpp)
+add_executable(real_time_ctc_node src/Registrations/real_time_ctc.cpp)
 
 #Segmentations Executable
 add_executable(outlier_display_node src/Segmentations/outlier_segmentation.cpp)
@@ -84,7 +85,7 @@ target_link_libraries(softkinetic_bringup_node ${DepthSenseSDK_LIBRARIES} ${catk
 
 #Filters Target
 target_link_libraries(passthrough_filter_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
-target_link_libraries(radius_conditional_filter_node${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
+target_link_libraries(radius_conditional_filter_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
 
 #Fixtures Target
 target_link_libraries(concave_hull_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
@@ -98,6 +99,7 @@ target_link_libraries(fixed_base_tool_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBR
 target_link_libraries(pre_operative_image_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
 target_link_libraries(intraoperative_image_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
 target_link_libraries(cloud_to_cloud_registration_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
+target_link_libraries(real_time_ctc_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})
 
 #Segmentations Target
 target_link_libraries(outlier_display_node ${PCL_LIBRARIES} ${DepthSenseSDK_LIBRARIES} ${catkin_LIBRARIES})

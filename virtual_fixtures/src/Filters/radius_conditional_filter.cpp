@@ -4,12 +4,12 @@
  * ME5205 - Professor Fischer
  * Created December 15, 2014
  *
- * @node: passthrough_filter_node
- * @Publisher: 
- * @Subscriber: 
+ * @node: radius_conditional_filter_node
+ * @Publisher: /daVinci/Fixture/RadiusConditionalFilte
+ * @Subscriber: /daVinci/Fixture/OutliersDisplay
  * @msg: sensor_msgs::PointCloud2
  *
- * @purpose: 
+ * @purpose: Eliminates noise from cloud by removing all points outside of a radius treshold  
  *      
  *
  */

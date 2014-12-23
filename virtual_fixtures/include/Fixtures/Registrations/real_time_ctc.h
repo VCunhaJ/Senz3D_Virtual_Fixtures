@@ -1,15 +1,6 @@
-/*
- * intraoperative_image.h
- *
- *  Created on: Dec 16, 2014
- *      Author: Vanderlei Cunha Jr.
- */
+#ifndef REAL_TIME_CTC_H_
+#define REAL_TIME_CTC_H_
 
-
-#ifndef INTRAOPERATIVE_IMAGE_H_
-#define INTRAOPERATIVE_IMAGE_H_
-
-#include<Fixtures/virtual_fixtures.h>
 
 #include<Fixtures/virtual_fixtures.h>
 #include<Fixtures/Images/fixed_base_tool.h>
@@ -41,4 +32,4 @@ ros::Publisher publishPreoperativeImage;
 double max_thresh = 0.020; //
 double max_iteration = 50;
 
-#endif /* INTRAOPERATIVE_IMAGE_H_ */
+#endif
